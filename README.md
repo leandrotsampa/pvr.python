@@ -3,11 +3,16 @@ A PVR client supporting Python scripting for [Kodi](http://kodi.tv)
 
 ## Build instructions
 
-### Linux
+### Any System
 
-1. `mkdir build && cd build`
-2. `cmake -DADDONS_TO_BUILD=pvr.python -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/path/to/xbmc/addons -DPACKAGE_ZIP=1 /path/to/xbmc/project/cmake/addons`
-3. `make`
+1. `git clone https://github.com/xbmc/xbmc.git`
+# Configure and compile depends and back to xbmc/ before step 3.
+2. `git clone https://github.com/leandrotsampa/pvr.python.git`
+3. `cd pvr.python`
+4. `cp -Rf binary-addons/pvr.python ../project/cmake/addons/addons`
+5. `mkdir build && cd build`
+6. `cmake -DADDONS_TO_BUILD=pvr.python -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../../addons -DCMAKE_TOOLCHAIN_FILE=../../tools/depends/target/Toolchain_binaddons.cmake -DPACKAGE_ZIP=1 ../../project/cmake/addons`
+7. `make`
 
 To use, name the Python PVR implementation *pvrimpl.py* and place it in the addon directory, e.g. *~/.kodi/addons/pvr.python/pvrimpl.py* or */usr/share/kodi/addons/pvr.python/pvrimpl.py*. The default *pvrimpl.py* is a re-implementation of the Demo PVR backend. Other examples are located in the *examples* directory.
 

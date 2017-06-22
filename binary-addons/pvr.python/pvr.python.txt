@@ -1,0 +1,1 @@
+pvr.python https://github.com/leandrotsampa/pvr.python.git master
