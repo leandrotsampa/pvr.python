@@ -6,7 +6,7 @@ A PVR client supporting Python scripting for [Kodi](http://kodi.tv)
 ### Any System
 
 1. `git clone https://github.com/xbmc/xbmc.git`
-# Configure and compile depends and back to xbmc/ before step 3.
+* Configure and compile depends and back to xbmc/ before step 2.
 2. `git clone https://github.com/leandrotsampa/pvr.python.git`
 3. `cd pvr.python`
 4. `cp -Rf binary-addons/pvr.python ../project/cmake/addons/addons`
